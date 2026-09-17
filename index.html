@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskFlow - Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="logo">Task<span>Flow</span></div>
+    <div class="nav-links">
+        <a href="index.html">Dashboard</a>
+        <a href="tasks.html">Tasks</a>
+        <a href="calendar.html">Calendar</a>
+        <a href="progress.html">Progress</a>
+        <a href="trash.html">Trash</a>
+    </div>
+    <button id="themeToggle" class="theme-btn">🌙</button>
+</nav>
+
+<main class="container">
+    <section class="hero">
+        <div class="hero-text">
+            <p class="eyebrow">YOUR PRODUCTIVITY HUB</p>
+            <h1>Stay organized.<br>Get things done.</h1>
+            <p>Manage your tasks, track your progress and build productive habits.</p>
+            <a href="tasks.html" class="primary-btn">＋ Add New Task</a>
+        </div>
+    </section>
+
+    <section class="stats-grid">
+        <div class="stat-card"><div class="stat-icon">📋</div><div><span>Total Tasks</span><strong id="totalTasks">0</strong></div></div>
+        <div class="stat-card"><div class="stat-icon">⏳</div><div><span>Active</span><strong id="activeTasks">0</strong></div></div>
+        <div class="stat-card"><div class="stat-icon">✅</div><div><span>Completed</span><strong id="completedTasks">0</strong></div></div>
+        <div class="stat-card"><div class="stat-icon">🔥</div><div><span>Current Streak</span><strong id="currentStreak">0</strong></div></div>
+    </section>
+
+    <section class="dashboard-grid">
+        <div class="dashboard-card">
+            <div class="section-header"><div><p class="eyebrow">TODAY</p><h2>Today's Tasks</h2></div><a href="tasks.html">View all →</a></div>
+            <div id="todayTasks"></div>
+        </div>
+        <div class="dashboard-card">
+            <div class="section-header"><div><p class="eyebrow">COMING UP</p><h2>Upcoming Tasks</h2></div><a href="calendar.html">Calendar →</a></div>
+            <div id="upcomingTasks"></div>
+        </div>
+    </section>
+
+    <section class="quick-grid">
+        <a class="quick-card" href="tasks.html"><span>📝</span><div><h3>Manage Tasks</h3><p>Add, edit, filter and organize tasks.</p></div></a>
+        <a class="quick-card" href="calendar.html"><span>📅</span><div><h3>Calendar</h3><p>Track your daily productivity status.</p></div></a>
+        <a class="quick-card" href="progress.html"><span>📈</span><div><h3>Progress</h3><p>See completion and streak analytics.</p></div></a>
+        <a class="quick-card" href="trash.html"><span>🗑️</span><div><h3>Trash</h3><p>Restore or permanently remove tasks.</p></div></a>
+    </section>
+</main>
+<div id="toastContainer" class="toast-container"></div>
+<script src="script.js"></script>
+</body>
+</html>

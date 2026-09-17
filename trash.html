@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskFlow - Trash</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<nav class="navbar">
+    <div class="logo">Task<span>Flow</span></div>
+    <div class="nav-links">
+        <a href="index.html">Dashboard</a>
+        <a href="tasks.html">Tasks</a>
+        <a href="calendar.html">Calendar</a>
+        <a href="progress.html">Progress</a>
+        <a class="active" href="trash.html">Trash</a>
+    </div>
+    <button id="themeToggle" class="theme-btn">🌙</button>
+</nav>
+<main class="container">
+    <div class="page-header">
+        <div><p class="eyebrow">RECENTLY DELETED</p><h1>Trash</h1><p>Restore deleted tasks or permanently remove them.</p></div>
+        <button id="emptyTrashBtn" class="danger-btn">Empty Trash</button>
+    </div>
+    <section id="trashList" class="task-list"></section>
+</main>
+
+<div id="confirmModal" class="modal hidden">
+    <div class="modal-box confirmation">
+        <div class="warning-icon">⚠️</div>
+        <h2 id="confirmTitle">Are you sure?</h2>
+        <p id="confirmMessage">This action cannot be undone.</p>
+        <div class="confirmation-buttons">
+            <button id="cancelConfirm" class="secondary-btn">Cancel</button>
+            <button id="confirmAction" class="danger-btn">Confirm</button>
+        </div>
+    </div>
+</div>
+<div id="toastContainer" class="toast-container"></div>
+<script src="script.js"></script>
+</body>
+</html>

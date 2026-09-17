@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskFlow - Calendar</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="logo">Task<span>Flow</span></div>
+    <div class="nav-links">
+        <a href="index.html">Dashboard</a>
+        <a href="tasks.html">Tasks</a>
+        <a href="calendar.html">Calendar</a>
+        <a href="progress.html">Progress</a>
+        <a href="trash.html">Trash</a>
+    </div>
+    <button id="themeToggle" class="theme-btn">🌙</button>
+</nav>
+
+<main class="container">
+    <div class="page-header">
+        <div><p class="eyebrow">PRODUCTIVITY CALENDAR</p><h1>Calendar</h1><p>Mark your daily productivity status and manage date-based tasks.</p></div>
+    </div>
+    <section class="calendar-card">
+        <div class="calendar-header">
+            <button id="prevMonth" class="secondary-btn">‹</button>
+            <h2 id="monthYear"></h2>
+            <button id="nextMonth" class="secondary-btn">›</button>
+        </div>
+        <div class="calendar-weekdays"><span>Sun</span><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span></div>
+        <div id="calendarGrid" class="calendar-grid"></div>
+        <div class="calendar-legend">
+            <div><span class="legend-box completed"></span> Completed</div>
+            <div><span class="legend-box partial"></span> Partial</div>
+            <div><span class="legend-box pending"></span> Pending</div>
+            <div><span class="legend-box no-status"></span> Remaining</div>
+        </div>
+    </section>
+</main>
+
+<div id="calendarModal" class="modal hidden">
+    <div class="modal-box">
+        <button class="close-modal" id="closeCalendarModal">×</button>
+        <p class="eyebrow">SELECTED DATE</p>
+        <h2 id="selectedDateTitle">Date</h2>
+        <div id="selectedDateTasks"></div>
+        <div class="status-buttons">
+            <button class="status-btn completed-btn" data-status="completed">✓ Completed</button>
+            <button class="status-btn partial-btn" data-status="partial">◐ Partial</button>
+            <button class="status-btn pending-btn" data-status="pending">✕ Pending</button>
+        </div>
+        <div class="confirmation-buttons">
+            <button id="clearCalendarStatus" class="secondary-btn">Clear Status</button>
+            <button id="calendarAddTask" class="primary-btn">＋ Add Task</button>
+            <button id="setReminderBtn" class="secondary-btn">🔔 Reminder</button>
+        </div>
+    </div>
+</div>
+<div id="toastContainer" class="toast-container"></div>
+<script src="script.js"></script>
+</body>
+</html>

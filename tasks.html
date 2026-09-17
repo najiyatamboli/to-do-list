@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskFlow - Tasks</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<nav class="navbar">
+    <div class="logo">Task<span>Flow</span></div>
+    <div class="nav-links">
+        <a href="index.html">Dashboard</a>
+        <a class="active" href="tasks.html">Tasks</a>
+        <a href="calendar.html">Calendar</a>
+        <a href="progress.html">Progress</a>
+        <a href="trash.html">Trash</a>
+    </div>
+    <button id="themeToggle" class="theme-btn">🌙</button>
+</nav>
+<main class="container">
+    <div class="page-header">
+        <div><p class="eyebrow">PRODUCTIVITY</p><h1>My Tasks</h1><p>Plan, organize and complete your work.</p></div>
+        <button id="openTaskForm" class="primary-btn">＋ Add Task</button>
+    </div>
+
+    <section class="toolbar">
+        <div class="search-box">🔎 <input id="searchInput" type="text" placeholder="Search tasks..."></div>
+        <select id="priorityFilter"><option value="all">All Priorities</option><option value="high">High</option><option value="medium">Medium</option><option value="low">Low</option></select>
+        <select id="categoryFilter"><option value="all">All Categories</option></select>
+        <select id="dateFilter"><option value="all">All Dates</option><option value="today">Today</option><option value="upcoming">Upcoming</option><option value="overdue">Overdue</option></select>
+        <select id="sortFilter"><option value="custom">Custom Order</option><option value="newest">Newest</option><option value="oldest">Oldest</option><option value="due">Due Date</option><option value="priority">Priority</option></select>
+    </section>
+
+    <div class="filter-tabs">
+        <button class="filter-tab active" data-status="all">All</button>
+        <button class="filter-tab" data-status="active">Active</button>
+        <button class="filter-tab" data-status="completed">Completed</button>
+    </div>
+
+    <section id="taskList" class="task-list"></section>
+</main>
+
+<div id="taskModal" class="modal hidden">
+    <div class="modal-box large-modal">
+        <button class="close-modal" id="closeTaskModal">×</button>
+        <p class="eyebrow">TASK</p>
+        <h2 id="formTitle">Create New Task</h2>
+        <form id="taskForm">
+            <input type="hidden" id="editingTaskId">
+            <label>Task Name *</label>
+            <input id="taskTitle" type="text" required placeholder="Enter task name">
+            <label>Description</label>
+            <textarea id="taskDescription" placeholder="Describe your task..."></textarea>
+            <div class="form-grid">
+                <div><label>Due Date</label><input id="taskDueDate" type="date"></div>
+                <div><label>Reminder</label><input id="taskReminder" type="datetime-local"></div>
+            </div>
+            <div class="form-grid">
+                <div><label>Priority</label><select id="taskPriority"><option value="low">Low</option><option value="medium" selected>Medium</option><option value="high">High</option></select></div>
+                <div><label>Category</label><select id="taskCategory"></select></div>
+            </div>
+            <label>Notes</label>
+            <textarea id="taskNotes" placeholder="Additional notes..."></textarea>
+            <div class="subtask-section">
+                <div class="subtask-header"><label>Subtasks</label><span id="subtaskProgress">0%</span></div>
+                <div class="progress-bar"><div id="subtaskProgressBar"></div></div>
+                <div id="subtaskList"></div>
+                <div class="add-subtask"><input id="newSubtask" type="text" placeholder="Add a subtask..."><button type="button" id="addSubtaskBtn">＋</button></div>
+            </div>
+            <button class="primary-btn full-width" type="submit">Save Task</button>
+        </form>
+    </div>
+</div>
+<div id="toastContainer" class="toast-container"></div>
+<script src="script.js"></script>
+</body>
+</html>

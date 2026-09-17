@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskFlow - Progress</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="logo">Task<span>Flow</span></div>
+    <div class="nav-links">
+        <a href="index.html">Dashboard</a>
+        <a href="tasks.html">Tasks</a>
+        <a href="calendar.html">Calendar</a>
+        <a href="progress.html">Progress</a>
+        <a href="trash.html">Trash</a>
+    </div>
+    <button id="themeToggle" class="theme-btn">🌙</button>
+</nav>
+
+<main class="container">
+    <div class="page-header"><div><p class="eyebrow">ANALYTICS</p><h1>Progress</h1><p>Understand your completion habits and productivity streaks.</p></div></div>
+    <section class="progress-overview">
+        <div class="progress-main-card">
+            <div class="progress-circle"><strong id="completionPercentage">0%</strong></div>
+            <div><p class="eyebrow">OVERALL COMPLETION</p><h2>Keep moving forward</h2><p id="progressMessage">Start completing your tasks.</p></div>
+        </div>
+        <div class="stats-grid">
+            <div class="stat-card"><div><span>Total</span><strong id="progressTotal">0</strong></div></div>
+            <div class="stat-card"><div><span>Completed</span><strong id="progressCompleted">0</strong></div></div>
+            <div class="stat-card"><div><span>Pending</span><strong id="progressPending">0</strong></div></div>
+            <div class="stat-card"><div><span>Best Streak</span><strong id="bestStreak">0</strong></div></div>
+        </div>
+    </section>
+    <section class="analytics-grid">
+        <div class="analytics-card"><div class="section-header"><h2>By Category</h2></div><div id="categoryProgress"></div></div>
+        <div class="analytics-card"><div class="section-header"><h2>By Priority</h2></div><div id="priorityProgress"></div></div>
+    </section>
+    <section class="dashboard-card">
+        <div class="section-header"><div><p class="eyebrow">HISTORY</p><h2>Completed Tasks</h2></div></div>
+        <div id="completedHistory"></div>
+    </section>
+</main>
+<div id="toastContainer" class="toast-container"></div>
+<script src="script.js"></script>
+</body>
+</html>
